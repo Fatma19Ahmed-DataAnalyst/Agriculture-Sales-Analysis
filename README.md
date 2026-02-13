@@ -1,6 +1,6 @@
 Agri-Sales Analysis: From Dirty Data to Strategic Insights 🌾📊
 
-🚀 Live Demo: [View Interactive Dashboard](https://fatma19ahmed-dataanalyst.github.io/Agriculture-Sales-Analysis/)
+🚀 Live Demo: [View Interactive Dashboard](agri_sales_dashboard.html)
 
 🌟 Project Overview
 
