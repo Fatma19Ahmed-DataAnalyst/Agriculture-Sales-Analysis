@@ -1,13 +1,12 @@
-Agri-Sales Analysis: From Dirty Data to Strategic Insights 🌾📊
+## Agri-Sales Analysis: From Dirty Data to Strategic Insights 🌾📊
 
-🚀 Live Demo: [View Interactive Dashboard](agri_sales_dashboard.html)
+## Live Demo:
+ [View Interactive Dashboard](https://fatma19ahmed-dataanalyst.github.io/Agriculture-Sales-Analysis/agri_sales_dashboard.html)
 
 🌟 Project Overview
-
 This project demonstrates a full data analytics workflow. I started with a highly inconsistent agricultural sales dataset (100+ records) and transformed it into a professional dashboard that provides actionable business insights.
 
 🛠️ Problems I Solved (Data Cleaning)
-
 The raw data was "noisy" and full of errors. I performed the following:
 
 Standardization: Unified naming for Regions (e.g., "delta" to "Delta") and Employees.
@@ -18,12 +17,10 @@ Date Normalization: Converted multiple date formats (DD-MM-YYYY, MM/DD/YYYY) int
 
 Handling Missing Values: Used logical formulas to recover missing Unit Price and Total Sales values.
 
-📈 Dashboard Preview
-
-![Dashboard.png](Dashboard_Preview.png)
+## Dashboard Preview
+[Dashboard.png](Dashboard_Preview.PNG)
 
 💡 Key Business Insights
-
 Profitability: Total Net Profit achieved was 569,805 EGP.
 
 Top Performer: Hani achieved the highest profit margin (42%).
@@ -33,13 +30,18 @@ Product Strength: Seeds are the most profitable category, contributing 45% of to
 Trend Analysis: Identified a 29% decline in profit since March, requiring strategic intervention in the "Seeds" category.
 
 ⚙️ Tools Used
-
-Microsoft Excel: Power Query, Pivot Tables, and Advanced Formulas (SUMIFS, IF).
+Microsoft Excel: Power Query (ETL), Pivot Tables, and Advanced Formulas (SUMIFS, IF).
 
 Data Visualization: Strategic Dashboard design with Slicers and Trendlines.
 
-Analyst: Fatma Ahmed
+Web Deployment: HTML/CSS/Chart.js for the interactive presentation.
+
+👤 About the Analyst
+
+Fatma Ahmed - Data Analyst
 
 Connect with me on [LinkedIn](https://www.linkedin.com/in/fatma-ahmed-dataanalyst) 
 
- 
+[Check out my GitHub Profile](https://github.com/fatma19ahmed-dataanalyst)
+
+If you find this project interesting, feel free to give it a ⭐!
