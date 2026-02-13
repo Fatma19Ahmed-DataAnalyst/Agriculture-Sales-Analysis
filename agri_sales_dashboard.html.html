@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agri-Sales Analysis | Fatma Ahmed</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; }
+        .stat-card { transition: transform 0.2s; }
+        .stat-card:hover { transform: translateY(-4px); }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <header class="flex flex-col md:flex-row md:justify-between md:items-center mb-10 gap-4">
+            <div>
+                <h1 class="text-3xl font-extrabold text-slate-900">Agri-Sales Analysis ??</h1>
+                <p class="text-slate-500 mt-1">From Dirty Data to Strategic Insights</p>
+            </div>
+            <div class="flex items-center gap-3 bg-white p-2 pr-6 rounded-full shadow-sm border border-slate-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-500 flex items-center justify-center text-white font-bold">FA</div>
+                <div>
+                    <p class="text-sm font-bold text-slate-800 leading-none">Fatma Ahmed</p>
+                    <p class="text-xs text-slate-500">Data Analyst</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Problems Solved / Highlights -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            <div class="bg-emerald-50 border-l-4 border-emerald-500 p-4 rounded-r-xl">
+                <h4 class="font-bold text-emerald-800 text-sm uppercase tracking-wider mb-2">Standardization</h4>
+                <p class="text-emerald-700 text-sm">Unified inconsistent region names (e.g., "delta" ? "Delta") and employee records.</p>
+            </div>
+            <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-xl">
+                <h4 class="font-bold text-amber-800 text-sm uppercase tracking-wider mb-2">Error Correction</h4>
+                <p class="text-amber-700 text-sm">Identified & neutralized a 1,000,000 EGP outlier that skewed initial results.</p>
+            </div>
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-xl">
+                <h4 class="font-bold text-blue-800 text-sm uppercase tracking-wider mb-2">Normalization</h4>
+                <p class="text-blue-700 text-sm">Standardized disparate date formats and recovered missing values using logic.</p>
+            </div>
+        </section>
+
+        <!-- Metrics -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 stat-card">
+                <p class="text-slate-500 text-sm font-medium">Total Net Profit</p>
+                <h3 class="text-2xl font-bold text-slate-900 mt-1">569,805 <span class="text-xs text-slate-400 font-normal italic">EGP</span></h3>
+                <span class="inline-block mt-2 text-xs font-bold px-2 py-1 bg-emerald-100 text-emerald-700 rounded">Target Achieved</span>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 stat-card">
+                <p class="text-slate-500 text-sm font-medium">Top Performer (Hani)</p>
+                <h3 class="text-2xl font-bold text-slate-900 mt-1">42% <span class="text-xs text-slate-400 font-normal italic">Margin</span></h3>
+                <span class="inline-block mt-2 text-xs font-bold px-2 py-1 bg-emerald-100 text-emerald-700 rounded">Efficiency Leader</span>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 stat-card">
+                <p class="text-slate-500 text-sm font-medium">Core Category (Seeds)</p>
+                <h3 class="text-2xl font-bold text-slate-900 mt-1">45% <span class="text-xs text-slate-400 font-normal italic">Contribution</span></h3>
+                <span class="inline-block mt-2 text-xs font-bold px-2 py-1 bg-blue-100 text-blue-700 rounded">Major Driver</span>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 stat-card">
+                <p class="text-slate-500 text-sm font-medium">Critical Alert</p>
+                <h3 class="text-2xl font-bold text-red-600 mt-1">-29% <span class="text-xs text-slate-400 font-normal italic">Trend</span></h3>
+                <span class="inline-block mt-2 text-xs font-bold px-2 py-1 bg-red-100 text-red-700 rounded">Post-March Decline</span>
+            </div>
+        </div>
+
+        <!-- Charts Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Trend Chart -->
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                <div class="mb-6">
+                    <h3 class="text-lg font-bold text-slate-800">Profit Trend Analysis</h3>
+                    <p class="text-sm text-slate-400 tracking-tight">Monthly performance showing the Q2 decline.</p>
+                </div>
+                <div class="h-64">
+                    <canvas id="trendChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Category Chart -->
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                <div class="mb-6 flex justify-between items-start">
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-800">Profit by Category</h3>
+                        <p class="text-sm text-slate-400 tracking-tight">Seeds leading as the most profitable asset.</p>
+                    </div>
+                </div>
+                <div class="h-64">
+                    <canvas id="categoryChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-12 pt-8 border-t border-slate-200 text-center">
+            <p class="text-slate-400 text-sm mb-4 italic">"Transforming raw data into strategic business decisions."</p>
+            <div class="flex justify-center gap-6">
+                <a href="https://www.linkedin.com/in/fatma-ahmed-dataanalyst" target="_blank" class="text-slate-600 hover:text-blue-600 font-bold text-sm">LinkedIn Profile</a>
+                <span class="text-slate-300">|</span>
+                <span class="text-slate-600 font-bold text-sm">Excel & Power Query Portfolio</span>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        window.onload = function() {
+            // Trend Chart
+            const trendCtx = document.getElementById('trendChart').getContext('2d');
+            new Chart(trendCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                    datasets: [{
+                        label: 'Profit (EGP)',
+                        data: [120000, 135000, 140000, 99400, 85000, 75000],
+                        borderColor: '#10b981',
+                        backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                        fill: true,
+                        tension: 0.4,
+                        borderWidth: 3,
+                        pointBackgroundColor: '#10b981'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: '#f1f5f9' } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+
+            // Category Chart
+            const catCtx = document.getElementById('categoryChart').getContext('2d');
+            new Chart(catCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Seeds', 'Fertilizers', 'Pesticides', 'Equipment'],
+                    datasets: [{
+                        data: [45, 30, 15, 10],
+                        backgroundColor: ['#10b981', '#3b82f6', '#f59e0b', '#94a3b8'],
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { 
+                            beginAtZero: true, 
+                            max: 100, 
+                            ticks: { callback: v => v + '%' },
+                            grid: { color: '#f1f5f9' }
+                        },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+        };
+    </script>
+</body>
+</html>
